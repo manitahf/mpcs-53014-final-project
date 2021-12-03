@@ -29,7 +29,7 @@ object StreamTrips {
 
   def updateTripStats(ktr: KafkaTripRecord): String = {
 //    If no weather available or weather has not been fetched in 5 minutes, then fetch new weather report
-    if(weatherReport.isEmpty || time.Instant.now().isAfter(weatherLastUpdated.plusSeconds(30))) {
+    if(weatherReport.isEmpty || time.Instant.now().isAfter(weatherLastUpdated.plusSeconds(300))) {
       weatherReport = WeatherUtils.getCurrentChicagoWeatherReport
     }
 //    If no weather available, return
@@ -87,7 +87,7 @@ object StreamTrips {
 
     // Create context with 2 second batch interval
     val sparkConf = new SparkConf().setAppName("StreamTrips")
-    val ssc = new StreamingContext(sparkConf, Seconds(10))
+    val ssc = new StreamingContext(sparkConf, Seconds(2))
 
     // Create direct kafka stream with brokers and topics
     val topicsSet = Set("manita_trips")
