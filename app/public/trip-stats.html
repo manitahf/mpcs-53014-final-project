@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head>
+    <title>Chicago Rideshare & Taxi Trips</title>
+    <link type="text/css" rel="stylesheet" href="elegant-aero.css"/>
+</head>
+<body style='background-image:URL("skyline-panorama.jpeg");background-repeat:no-repeat;background-position:center top;-webkit-background-size:100%;-moz-background-size:100%;-o-background-size:100%;background-size: 100%;'>
+<datalist id="city_areas">
+    <option value="Rogers Park">
+    <option value="West Ridge">
+    <option value="Uptown">
+    <option value="Lincoln Square">
+    <option value="North Center">
+    <option value="Lake View">
+    <option value="Lincoln Park">
+    <option value="Near North Side">
+    <option value="Edison Park">
+    <option value="Norwood Park">
+    <option value="Jefferson Park">
+    <option value="Forest Glen">
+    <option value="North Park">
+    <option value="Albany Park">
+    <option value="Portage Park">
+    <option value="Irving Park">
+    <option value="Dunning">
+    <option value="Montclare">
+    <option value="Belmont Cragin">
+    <option value="Hermosa">
+    <option value="Avondale">
+    <option value="Logan Square">
+    <option value="Humboldt Park">
+    <option value="West Town">
+    <option value="Austin">
+    <option value="West Garfield Park">
+    <option value="East Garfield Park">
+    <option value="Near West Side">
+    <option value="North Lawndale">
+    <option value="South Lawndale">
+    <option value="Lower West Side">
+    <option value="Loop">
+    <option value="Near South Side">
+    <option value="Armour Square">
+    <option value="Douglas">
+    <option value="Oakland">
+    <option value="Fuller Park">
+    <option value="Grand Boulevard">
+    <option value="Kenwood">
+    <option value="Washington Park">
+    <option value="Hyde Park">
+    <option value="Woodlawn">
+    <option value="South Shore">
+    <option value="Chatham">
+    <option value="Avalon Park">
+    <option value="South Chicago">
+    <option value="Burnside">
+    <option value="Calumet Heights">
+    <option value="Roseland">
+    <option value="Pullman">
+    <option value="South Deering">
+    <option value="East Side">
+    <option value="West Pullman">
+    <option value="Riverdale">
+    <option value="Hegewisch">
+    <option value="Garfield Ridge">
+    <option value="Archer Heights">
+    <option value="Brighton Park">
+    <option value="McKinley Park">
+    <option value="Bridgeport">
+    <option value="New City">
+    <option value="West Elsdon">
+    <option value="Gage Park">
+    <option value="Clearing">
+    <option value="West LawnSouthwest Side">
+    <option value="Chicago Lawn">
+    <option value="West Englewood">
+    <option value="Englewood">
+    <option value="Greater Grand Crossing">
+    <option value="Ashburn">
+    <option value="Auburn Gresham">
+    <option value="Beverly">
+    <option value="Washington Heights">
+    <option value="Mount Greenwood">
+    <option value="Morgan Park">
+    <option value="O’Hare">
+    <option value="Edgewater">
+</datalist>
+<p style="margin-bottom:2cm"/>
+<h2 class="elegant-aero"
+    style="width:480px;margin-left:5%;text-align:center;display:inline-block;color:#5E5E5E;background:#FFFFFF">&nbsp;Search Chicago Rideshare & Taxi Trip Stats&nbsp;</h2>
+<form action="/get-stats.html" style="width:350px;margin:0 auto;padding-top=200px;background:#FFFFFF" method="get"
+      target="results_iframe" class="elegant-aero">
+    <br>
+    <label>
+        <span>Pickup:</span>
+        <input list="city_areas" type="text" name="pickup" required/>
+    </label>
+    <label>
+        <span>Dropoff:</span>
+        <input list="city_areas" type="text" name="dropoff" required/>
+    </label>
+    <label>
+        <span>Temperature:</span>
+        <input type="number" name="temperature" required style="width:50px;"/>
+    </label>
+    <label>
+        <span>Conditions:</span>
+        <input type="radio" id="clear" name=weather value="clear" checked/>
+        <p style="display:inline">Clear</p>
+        <input type="radio" id="rain" name=weather value="rain"/>
+        <p style="display:inline;">Rain</p>
+        <input type="radio" id="snow" name=weather value="snow"/>
+        <p style="display:inline;">Snow</p>
+        <br>
+        <input type="radio" id="hail" name=weather value="hail"/>
+        <p style="display:inline">Hail&nbsp;</p>
+        <input type="radio" id="thunder" name=weather value="thunder"/>
+        <p style="display:inline;">Thunderstorms</p>
+    </label>
+    <br>
+    <label>
+        <span></span> <input type="submit" value="Submit">
+    </label>
+</form>
+<p style="margin-bottom:2cm"/>
+
+<iframe frameBorder="0" name="results_iframe" style="display:block;width:70%;margin-left:auto;margin-right:auto;height:1000;"/>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head>
+    <title>Result</title>
+    <link type="text/css" rel="stylesheet" href="table.css"/>
+</head>
+<body>
+<!--<div style="margin-left:auto;margin-right:auto;display:block;width:fit-content;text-align:center;box-shadow: 10px 10px 5px #888888;border:1px solid #000000;-moz-border-radius-bottomleft:9px;-webkit-border-bottom-left-radius:9px;border-bottom-left-radius:9px;-moz-border-radius-bottomright:9px;-webkit-border-bottom-right-radius:9px;border-bottom-right-radius:9px;-moz-border-radius-topright:9px;-webkit-border-top-right-radius:9px;border-top-right-radius:9px;-moz-border-radius-topleft:9px;-webkit-border-top-left-radius:9px;border-top-left-radius:9px;background:white">-->
+<!--    <h3 style="margin-top:2px;margin-bottom:1px;">&nbsp;&nbsp;Trips from {{pickup}} to {{dropoff}}&nbsp;&nbsp;</h3>-->
+<!--    <p style="margin-top:0px;margin-bottom:2px;">{{temperature}} temperatures with {{weather}} </p>-->
+<!--</div>-->
+<!--<br>-->
+<div style="margin-left:auto;margin-right:auto;display:block;width:60%;text-align:center;box-shadow: 10px 10px 5px #888888;border:1px solid #000000;-moz-border-radius-bottomleft:9px;-webkit-border-bottom-left-radius:9px;border-bottom-left-radius:9px;-moz-border-radius-bottomright:9px;-webkit-border-bottom-right-radius:9px;border-bottom-right-radius:9px;-moz-border-radius-topright:9px;-webkit-border-top-right-radius:9px;border-top-right-radius:9px;-moz-border-radius-topleft:9px;-webkit-border-top-left-radius:9px;border-top-left-radius:9px;background:white">
+    <h3 style="margin-top:2px;margin-bottom:1px;">&nbsp;Trips from {{pickup}} to {{dropoff}}&nbsp;</h3>
+    <p style="margin-top:0px;margin-bottom:20px;">{{temperature}} temperatures with {{weather}} </p>
+    <span>Estimated Distance: {{avg_distance}} mi </span>
+    &nbsp;&nbsp;&nbsp;<span>Estimated Duration: {{avg_duration}} min</span>
+    <br>
+    <br>
+    <table class="CSS_Table_Example" style="width:80%;margin:auto;">
+        <tr stype="margin-top:2px;">
+            <th></th>
+            <th>Min Price</th>
+            <th>Avg Price</th>
+            <th>Max Price</th>
+        </tr>
+        <tr>
+            <th>By Rideshare</th>
+            <td>${{rideshare_min_price}}</td>
+            <td>${{rideshare_avg_price}}</td>
+            <td>${{rideshare_max_price}}</td>
+        </tr>
+        <tr>
+            <th>By Taxi</th>
+            <td>${{taxi_min_price}}</td>
+            <td>${{taxi_avg_price}}</td>
+            <td>${{taxi_max_price}}</td>
+        </tr>
+
+    </table>
+    <p style="width:80%;display:block;margin-left:auto;margin-right:auto;text-align:left;font-size:small;font-style:italic"> *Based on data from {{rideshare_trips}} rideshare trips and {{taxi_trips}} taxi trips </p>
+    </p>
+</div>
+
+</body>
+</html>
