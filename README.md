@@ -1,7 +1,7 @@
 # MPCS-53014 Final Project: Chicago Taxi & Rideshare Trips
 
 ## Overview
-This repo contains all scripts and source code for my Chicago Taxi & Rideshare Trip application. The application leverages Chicago Data Portal's Taxi dataset, as well as the Transportation Network (Rideshare) dataset along with weather data for Chicago, IL to provide insight into the pricing of trips in relation to the weather. The taxi trip dataset dates back to 2013 and includes over 140 million trips, while the Rideshare dataset includes over 150 million trips dating back to 2018. As shown below, the key functionality is the ability to access pricing, distance, and duration statistics for a given route and specified weather conditions. A route is defined by a pickup and dropoff Community Area code. (Note: Chicago currently has 77 Community Areas)
+This repo contains all scripts and source code for my Chicago Taxi & Rideshare Trip application. The application leverages Chicago Data Portal's Taxi dataset, as well as the Transportation Network (Rideshare) dataset, along with Chicago weather data to provide insight into the pricing of trips in relation to the weather. The taxi trip dataset dates back to 2013 and includes over 140 million trip records, while the rideshare dataset includes over 150 million trips dating back to 2018. As shown below, the key functionality is the ability to access pricing, distance, and duration statistics for a given route and specified weather conditions. A route is defined by a pickup and dropoff Community Area code. (Note: Chicago currently has 77 Community Areas)
 
 ![Trip Stats](TripStats.png)
 
@@ -21,7 +21,6 @@ cd /manita/speed-layer-trips/target
 
 spark-submit --master local[2] --driver-java-options "-Dlog4j.configuration=file:///home/hadoop/ss.log4j.properties" --class StreamTrips uber-speed-layer-trips-1.0-SNAPSHOT.jar b-2.mpcs53014-kafka.198nfg.c7.kafka.us-east-2.amazonaws.com:9092,b-1.mpcs53014-kafka.198nfg.c7.kafka.us-east-2.amazonaws.com:9092
 ```
-Note that the speed layer must be running in order to use the new trip submission form.
 
 ## Design & Implementation Details
 
@@ -63,4 +62,4 @@ npm install
 node app.js 3013 172.31.39.49 8070 mpcs53014-kafka.198nfg.c7.kafka.us-east-2.amazonaws.com:9092
 ```
 
-The app can then be viewed on port 3013 [http://ec2-52-14-115-151.us-east-2.compute.amazonaws.com:3013/trip-stats.html]
+The app can then be viewed on port 3013 [here](http://ec2-52-14-115-151.us-east-2.compute.amazonaws.com:3013/trip-stats.html).
