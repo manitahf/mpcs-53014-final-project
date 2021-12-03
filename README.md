@@ -35,7 +35,7 @@ I also leveraged the `hdfs-ingest-weather` program and Thrift SerDe from earlier
 
 My data lake contains 2 Hive tables of raw data - one for taxi trips and one for rideshare trips. I leveraged the OpenCSVSerde to serialize these datasets, and I did not do any transformations to follow the best practice of keeping the data lake as raw as possible. I did however eliminate rows that were missing a trip pickup location, dropoff location, or price. These fields could be missing due to bad data, formatting issues, or if the pickup or dropoff locations are outside of Chicago's 77 community areas. Since my project focuses only on trips within the city limits, I was okay with dropping these records.
 
-Next, I created a raw community areas table in Hive from `batch-layer/community_areas.csv`, as well as a Hive table to hold raw weather data. This table is identical to the class weather table, but I have limited the rows to only station 725350. I then created a transformed Hive view that included a subset of relevant fields for both taxi and rideshare trips, and I joined these with the community areas table to convert pickup/dropoff community area IDs to names. The next step was to join with the weather table.
+Next, I created a raw community areas table in Hive from `batch-layer/community_areas.csv`, as well as a Hive table to hold raw weather data. This table is identical to the class weather table, but I have limited the rows to only station 725350. I then created a transformed Hive view that included a subset of relevant fields for both taxi and rideshare trips, and I joined these with the community areas table to convert pickup/dropoff community area IDs to names. The next step was to join with the weather table. I was interested in temperature ranges and conditions (such as rain, snow, thunder, etc.) and I added calculated fields for both of these.
 
 Lastly, I created a batch view that aggregated trip stats grouped by route, weather (both temperature and conditions) for both taxi and rideshare. This Hive table is called `manita_trips_by_route_and_weather`. All intermediate tables and queries can be found in the `batch-layer` directory.
 
@@ -62,4 +62,5 @@ cd home/manita/final-project
 npm install
 node app.js 3013 172.31.39.49 8070 mpcs53014-kafka.198nfg.c7.kafka.us-east-2.amazonaws.com:9092
 ```
+
 The app can then be viewed on port 3013 [http://ec2-52-14-115-151.us-east-2.compute.amazonaws.com:3013/trip-stats.html]
