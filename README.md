@@ -11,7 +11,7 @@ While there is no realtime data feed available for Chicago's Taxi and Transporta
 
 ## Running the Application
 
-The web application has been deployed using CodeDeploy to our Load Balanced web servers and can be accessed at the links below:
+The web application has been deployed using CodeDeploy to our load balanced web servers and can be accessed at the links below:
 - [Trip Stats](http://manita-lb-1574432182.us-east-2.elb.amazonaws.com/trip-stats.html)
 - [Submit New Trip](http://manita-lb-1574432182.us-east-2.elb.amazonaws.com/submit-trips.html)
 
@@ -26,6 +26,10 @@ Note that the speed layer must be running in order to use the new trip submissio
 ## Design & Implementation Details
 
 ### Data Ingestion
+
+See the `ingest-data` directory for my data ingestion scripts. I downloaded the Taxi and Rideshare datasets (60+ GB each) from Chicago Data Portal in CSV format and put them into HDFS. I also created a lookup CSV file with the names and IDs of Chicago's 77 community areas to use in mapping the trip data.
+
+I also leveraged the `hdfs-ingest-weather` program and Thrift SerDe from earlier in this course to ingest 2021 data from NOAA specifically for Chicago. I used data only for station 725350 (located in central Chicago) as a simplification here. For weather data prior to 2021, I relied on the existing weather table from the course.
 
 ### Data Lake & Batch Views
 
