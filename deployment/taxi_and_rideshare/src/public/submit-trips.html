@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head>
+    <title>Submit Trips</title>
+    <link type="text/css" rel="stylesheet" href="/elegant-aero.css"/>
+</head>
+<body style='background-image:URL("skyline-panorama.jpeg");background-repeat:no-repeat;background-position:center top;-webkit-background-size:100%;-moz-background-size:100%;-o-background-size:100%;background-size: 100%;'>
+<datalist id="city_areas">
+    <option value="Rogers Park">
+    <option value="West Ridge">
+    <option value="Uptown">
+    <option value="Lincoln Square">
+    <option value="North Center">
+    <option value="Lake View">
+    <option value="Lincoln Park">
+    <option value="Near North Side">
+    <option value="Edison Park">
+    <option value="Norwood Park">
+    <option value="Jefferson Park">
+    <option value="Forest Glen">
+    <option value="North Park">
+    <option value="Albany Park">
+    <option value="Portage Park">
+    <option value="Irving Park">
+    <option value="Dunning">
+    <option value="Montclare">
+    <option value="Belmont Cragin">
+    <option value="Hermosa">
+    <option value="Avondale">
+    <option value="Logan Square">
+    <option value="Humboldt Park">
+    <option value="West Town">
+    <option value="Austin">
+    <option value="West Garfield Park">
+    <option value="East Garfield Park">
+    <option value="Near West Side">
+    <option value="North Lawndale">
+    <option value="South Lawndale">
+    <option value="Lower West Side">
+    <option value="Loop">
+    <option value="Near South Side">
+    <option value="Armour Square">
+    <option value="Douglas">
+    <option value="Oakland">
+    <option value="Fuller Park">
+    <option value="Grand Boulevard">
+    <option value="Kenwood">
+    <option value="Washington Park">
+    <option value="Hyde Park">
+    <option value="Woodlawn">
+    <option value="South Shore">
+    <option value="Chatham">
+    <option value="Avalon Park">
+    <option value="South Chicago">
+    <option value="Burnside">
+    <option value="Calumet Heights">
+    <option value="Roseland">
+    <option value="Pullman">
+    <option value="South Deering">
+    <option value="East Side">
+    <option value="West Pullman">
+    <option value="Riverdale">
+    <option value="Hegewisch">
+    <option value="Garfield Ridge">
+    <option value="Archer Heights">
+    <option value="Brighton Park">
+    <option value="McKinley Park">
+    <option value="Bridgeport">
+    <option value="New City">
+    <option value="West Elsdon">
+    <option value="Gage Park">
+    <option value="Clearing">
+    <option value="West LawnSouthwest Side">
+    <option value="Chicago Lawn">
+    <option value="West Englewood">
+    <option value="Englewood">
+    <option value="Greater Grand Crossing">
+    <option value="Ashburn">
+    <option value="Auburn Gresham">
+    <option value="Beverly">
+    <option value="Washington Heights">
+    <option value="Mount Greenwood">
+    <option value="Morgan Park">
+    <option value="O’Hare">
+    <option value="Edgewater">
+</datalist>
+<p style="margin-bottom:5px"/>
+<h2 class="elegant-aero"
+    style="margin-left:30%;text-align:center;display:inline-block;color:#5E5E5E;background:#FFFFFF">&nbsp;Submit new trip&nbsp;</h2>
+<form action="/submit.html" style="background:#FFFFFF;width:40%;margin:auto" method="get"
+      class="elegant-aero">
+    <br>
+    <label>
+        <span>Pickup:</span>
+        <input list="city_areas" type="text" name="pickup" required/>
+    </label>
+    <label>
+        <span>Dropoff:</span>
+        <input list="city_areas" type="text" name="dropoff" required/>
+    </label>
+    <label>
+        <span>Distance:</span>
+        <input type="number" step="0.01"name="miles" required style="width:50px;"/>mi
+    </label>
+    <label>
+        <span>Duration:</span>
+        <input type="number" name="duration" required style="width:50px;"/>min
+    </label>
+    <label>
+        <span>Total:</span>
+        <input type="number" step="0.01" name="total" required style="width:50px;"/>
+    </label>
+    <label>
+        <span>Trip Type:</span>
+        <input type="radio" id="rideshare" name=trip_type value="rideshare" checked/>
+        <p style="display:inline">Rideshare</p>
+        <br>
+        <input type="radio" id="taxi" name=trip_type value="taxi"/>
+        <p style="display:inline">Taxi</p>
+    </label>
+    <br>
+    <label>
+        <span>&nbsp;</span><input type="submit" value="Submit">
+    </label>
+</form>
+<iframe frameBorder="0" name="results_iframe" style="width:100%"/>
+</body>
+</html>

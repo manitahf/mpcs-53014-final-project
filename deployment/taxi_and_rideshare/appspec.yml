@@ -1,0 +1,38 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /src
+    destination: /home/manita/CodeDeploy/taxi_and_rideshare
+    
+permissions:
+  - object: /home/manita/CodeDeploy/taxi_and_rideshare/
+    pattern: "**"
+    owner: manita
+    group: manita
+
+  - object: /home/manita/CodeDeploy
+    pattern: "taxi_and_rideshare"
+    owner: manita
+    group: manita
+    type:
+      - directory
+
+hooks:
+  ApplicationStop:
+    - location: bin/application_stop.sh
+      timeout: 15
+      runas: manita
+  BeforeInstall:
+    - location: bin/before_install.sh
+      timeout: 120
+      runas: manita
+  AfterInstall:
+    - location: bin/after_install.sh
+      timeout: 1200
+      runas: manita
+  ApplicationStart:
+    - location: bin/application_start.sh
+      timeout: 120
+      runas: manita
+
